@@ -16,7 +16,7 @@ import java.net.URL;
  * Utilizando o JUnit para realizar a comparação do resultado
  */
 
-public class CalculadoraTeste {
+public class CalculadoraTesteEmulador {
 
     @Test
     public  void deveSomarDoisValores() throws MalformedURLException {
