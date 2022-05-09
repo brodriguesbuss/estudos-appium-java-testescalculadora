@@ -19,6 +19,9 @@ import java.net.URL;
 
 public class CalculadoraTesteMobileFisico {
 
+    private AndroidDriver driver;
+
+
     @Test
     public  void deveSomarDoisValoresFisico() throws MalformedURLException {
 
@@ -33,8 +36,10 @@ public class CalculadoraTesteMobileFisico {
 
         // OBS: O uiautomator2 oferece um conjunto de APIs para criar testes de IU que realizam interações em apps de usuário e do sistema
 
+        URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
+        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
         //Parametros para comunicação do servidor do emulador Android
-        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+      //  AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
 
         MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[9]/android.view.View[2]/android.view.View/android.widget.TextView[2]");
         el1.click();
